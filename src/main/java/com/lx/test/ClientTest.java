@@ -22,50 +22,18 @@ public class ClientTest {
     }
 
     public static String process() throws Exception {
-        // if (uJson.isNull(user_info)) {
-        //     throw new Exception("用户信息不能为空");
-        // }
-        // String personuuid = user_info.getString("personuuid");
-        // if (uString.isBlank(personuuid)) {
-        //     throw new Exception("用户信息不能为空！");
-        // }
         // http://10.99.148.19:8080/cgs-ui/services/TFM_HNGYTODO_FundService?wsdl
-        String endpoint = "http://localhost:8023/services/ws?wsdl";// OaUtil.getSysParameterValue(context, "todo_tfm_url");
-        String namespache = "http://impl.service.interfacemock.bsp.com/";// OaUtil.getSysParameterValue(context, "todo_tfm_namespace");
-        //根据用户id获取登录名
-        // EcpServiceClient ecpServiceClient = (EcpServiceClient) EcpCore.getBean(EcpConstants.ECP_SERVICE_CLIENT);
-        // //查询人员名称
-        // ecpServiceClient.init("uc", "service.uc.staffService");
-        // EcpResultBean staffRb = ecpServiceClient.callService(context, "queryLoginNameByPersonuuid", personuuid);
+        String endpoint = "http://localhost:8091/services/ws?wsdl";
+        String namespache = "http://impl.service.interfacemock.bsp.com/";
 
-        String loginName = "Jazen";// staffRb.obtainJSON().getString("loginName");
+        String loginName = "Jazen";
         // TODO 名称需要为process
         String method = "process";
         String res = "";
         try {
-            /*
-             * 组装入参
-             * {
-             "person_uuid": "A9EB133F3F694EC7A8F9BCB369E40913"
-             }
-             */
             JSONObject msg = new JSONObject();
-            msg.put("person_uuid", loginName);
-            /*
-             * 返回的res格式
-             * {
-                	code: '1',
-                	desc: '成功',
-                	db_num: '待办数量',
-                	db_list: [ //待办列表，如有
-                		{
-                			db_title: '待办标题',
-                			db_date: '待办日期',
-                			db_url: '待办链接（通过单点登录后能直接打开）'
-                		}
-                	]
-                }
-             */
+            msg.putByPath("person_uuid", loginName);
+
             Service service = new Service();
 
             Call call = (Call) service.createCall();

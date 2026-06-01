@@ -4,11 +4,15 @@ package com.lx.test.po;
  * @author liux
  * @version 1.0
  */
+
+import lombok.Data;
+
 /**
  * 扑克类（一副扑克）
  * @author 骆昊
  *
  */
+@Data
 public class Poker {
     private static String[] suites = {"黑桃", "梅花", "红心", "方块"};
     private static int[] faces = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
@@ -90,9 +94,12 @@ class PokerTest {
         // 只有通过其外部类 Poker 对象才能创建 Card 对象
         Poker.Card c2 = poker.new Card("红心", 1);
         // 自己创建一张牌
-        System.out.println(c1);
-        // 洗牌后的第一张
-        System.out.println(c2);
+//        System.out.println(c1);
+//        // 洗牌后的第一张
+//        System.out.println(c2);
         // 打印: 红心 A
+        for (int i = 0; i < poker.getCards().length; i++) {
+            System.out.println( poker.getCards()[i]);
+        }
     }
 }

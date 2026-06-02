@@ -10,6 +10,7 @@
     <modules>
         <module>thred_study</module>
         <module>springAi_study</module>
+        <module>design_pattern23</module>
     </modules>
     <packaging>pom</packaging>
     <name>test-war Maven Webapp</name>
@@ -107,6 +108,12 @@
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>compile</scope>
         </dependency>
 
 

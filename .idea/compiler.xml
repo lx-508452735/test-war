@@ -7,8 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springAi_study" />
+        <module name="design_pattern23" />
         <module name="thred_study" />
+        <module name="springAi_study" />
       </profile>
     </annotationProcessing>
   </component>
